@@ -26,7 +26,7 @@ to_convert = indicators[2:]
 for s in to_convert:
     df[s] = pd.to_numeric(df[s], errors = 'coerce')
 
-
+selected_countries = ['Benin','Haiti','Bangladesh','Mali','France']
 #MultiSelect
 selected_countries = st.multiselect("Select Countries", country_list)
 #st.write("You selected", len(selected_countries), "options: ", selected_countries)
@@ -38,6 +38,7 @@ df_pivot.index.names=['indicator']
 st.write(df_pivot)
 
 #Select Box
+indicator = 'Unemployment (% of labour force)'
 indicator = st.selectbox("Select an Indicator", indicators)
 st.write("you selected this option ",indicator)
 
