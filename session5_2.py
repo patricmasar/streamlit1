@@ -22,8 +22,8 @@ df.drop('Education: Tertiary gross enrol. ratio (f/m per 100 pop.)',  axis=1, in
 
 #Convert everything to numbers
 indicators = df.columns
-to_convert = indicators[2:]
-for s in to_convert:
+indicators = indicators[2:]
+for s in indicators:
     df[s] = pd.to_numeric(df[s], errors = 'coerce')
 
 selected_countries = ['Benin','Haiti','Bangladesh','Mali','France']
@@ -38,7 +38,7 @@ df_pivot.index.names=['indicator']
 st.write(df_pivot)
 
 #Select Box
-indicator = 'Unemployment (% of labour force)'
+indicator = 'GDP per capita (current US$)'
 indicator = st.selectbox("Select an Indicator", indicators)
 st.write("you selected this option ",indicator)
 
